@@ -1,0 +1,20 @@
+services:
+  app:
+    container_name: vue
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5173:5173
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - type: bind
+        source: ./
+        target: /app/
+      - type: volume
+        source: dummy
+        target: /app/node_modules
+    command: npm run dev -- --host
+volumes:
+  dummy:
