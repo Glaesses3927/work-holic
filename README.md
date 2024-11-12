@@ -1,29 +1,35 @@
-# work-holic
+# Work-Holic
 
-This template should help get you started developing with Vue 3 in Vite.
+このWebアプリは，特定の形式で与えられたシフト表を解析しJSON形式に変換したうえで，半月分の勤務時間を計算します．
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 使用方法
 
-## Customize configuration
+シフト表全体をコピぺし，Calculateボタンを押してください．
+勤務時間に年次有給休暇を考慮したい場合は，全ての日を表示させたシフト表をコピペし，所定労働時間(h)を入力した後，Calculateボタンを押してください．
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## Where is this?
 
-```sh
-npm install
+[Work-Holic](https://glaesses.net/webapps/workholic/)
+
+## 仕様
+
+このサービスを使用できるシフト表の形式は以下の通りです．
+
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+MM/DD(W)
+ hh:mm-hh:mm (w)
+  [休]  hh:mm-hh:mm (w)
+ LABEL
 ```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- 月日・曜日が上記の形式で記載されている．
+- 曜日は `Su, Mo, Tu, We, Th, Fr, Sa` と記載されている．
+- 勤務がある日は，勤務開始/終了時間と実働時間が上記の形式で記載されている．
+- 休憩時間がある場合は， `[休]` に続いて休憩開始/終了時間と休憩時間が記載されている．
+- 勤務がある日は，ラベル位置に勤務名が記載されている．
+- 勤務がない日は，ラベル位置に `----` もしくは `休日` と記載されている．
+- 特別有給休暇を使用する日は，ラベル位置に `休暇` と記載されている．
+- 欠勤した日は，ラベル位置に `欠勤` が含まれている．
+- 同日に複数の勤務があっても良い．
+- 計算された合計の勤務時間には休憩時間や欠勤した勤務は含まれません．ただし特別有給休暇を使用した日がある場合，所定労働時間分の勤務時間が含まれます．
