@@ -2,7 +2,7 @@
   import { ref } from 'vue'
   const menus = [
     { name: 'Home', href: 'https://glaesses.net/home' },
-    { name: 'WebApps', href: 'https://glaesses.net/home/webapp.html' }
+    { name: 'WebApps', href: 'https://glaesses.net/home/webapps.html' }
   ];
   const openMenu = ref(false)
   function setOpenMenu() {
@@ -15,7 +15,7 @@
   <header class='flex p-3 pr-8 sm:pr-12 bg-white fixed top-0 w-full z-30 shadow'>
     <div class='flex items-center'>
       <img src="@/assets/logo.png" class='h-12 w-12' alt='logo'></img>
-      <h1 class='text-lg leading-none'>Work-Holic</h1>
+      <h1 class='text-xl font-bold leading-none'>WorkHolic</h1>
     </div>
     <ul class='max-[640px]:hidden flex ml-auto'>
       <li v-for="menu in menus" :key="menu.name" class='flex sm:my-auto sm:ml-6 text-gray-900 rounded hover:bg-gray-100'>
