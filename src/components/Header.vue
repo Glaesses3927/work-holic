@@ -2,7 +2,7 @@
   import { ref } from 'vue'
   const menus = [
     { name: 'Home', href: 'https://glaesses.net/home' },
-    { name: 'WebApps', href: 'https://glaesses.net/home/webapps.html' }
+    { name: 'WebApps', href: 'https://glaesses.net/home/webapps' }
   ];
   const openMenu = ref(false)
   function setOpenMenu() {
