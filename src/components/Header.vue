@@ -1,8 +1,8 @@
 <script setup>
   import { ref } from 'vue'
   const menus = [
-    { name: 'Home', href: 'https://glaesses.net/home' },
-    { name: 'WebApps', href: 'https://glaesses.net/home/webapps' }
+    { name: 'Home', href: 'https://glaesses.net/' },
+    { name: 'WebApps', href: 'https://glaesses.net/webapps' }
   ];
   const openMenu = ref(false)
   function setOpenMenu() {
